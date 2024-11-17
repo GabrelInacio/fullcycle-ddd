@@ -1,48 +1,42 @@
-export default class Address {
-    _street: string = "";
-    _number: number = 0;
-    _city: string = "";
-    _zip: string = "";
-
-    constructor(street: string, city: string, number: number, zip: string) {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+class Address {
+    constructor(street, city, number, zip) {
+        this._street = "";
+        this._number = 0;
+        this._city = "";
+        this._zip = "";
         this._street = street;
         this._number = number;
         this._city = city;
         this._zip = zip;
-
         this.validate();
     }
-
-    get street(): string {
+    get street() {
         return this._street;
     }
-
-    get number(): number {
+    get number() {
         return this._number;
     }
-
-    get city(): string {
+    get city() {
         return this._city;
     }
-
-    get zip(): string {
+    get zip() {
         return this._zip;
     }
-    
-
-    validate(){
-        if(this._street.length === 0){
+    validate() {
+        if (this._street.length === 0) {
             throw new Error("Street is empty");
         }
-        if(this._city.length === 0){
+        if (this._city.length === 0) {
             throw new Error("City is empty");
         }
-        if(this._zip.length === 0){
+        if (this._zip.length === 0) {
             throw new Error("Zip is empty");
-        }   
+        }
     }
-
-    toString(){
+    toString() {
         return `${this._street}, ${this._number}, ${this._city} ${this._zip}`;
     }
 }
+exports.default = Address;

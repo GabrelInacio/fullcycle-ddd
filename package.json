@@ -16,5 +16,11 @@
     "@types/jest": "^29.5.12",
     "ts-jest": "^29.2.5",
     "ts-node": "^10.9.2"
+  },
+  "dependencies": {
+    "reflect-metadata": "^0.2.2",
+    "sequelize": "^6.37.5",
+    "sequelize-typescript": "^2.1.6",
+    "sqlite3": "^5.1.7"
   }
 }

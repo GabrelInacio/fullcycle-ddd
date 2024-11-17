@@ -1,11 +1,7 @@
-export default class OrderItem {
-    private _id: string;
-    private _productId: string;
-    private _name: string;
-    private _price: number;
-    private _quantity: number;
-
-    constructor(productId: string, name: string, price: number, quantity: number) {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+class OrderItem {
+    constructor(productId, name, price, quantity) {
         this._id = Math.random().toString(36).substring(7);
         this._productId = productId;
         this._name = name;
@@ -13,24 +9,19 @@ export default class OrderItem {
         this._quantity = quantity;
         this.validate();
     }
-
-    validate(){
-        if(this.quantity <= 0){
+    validate() {
+        if (this.quantity <= 0) {
             throw new Error("Quantity must be greater than 0");
         }
     }
-
-    orderItemTotal(): number {
+    orderItemTotal() {
         return this._price * this._quantity;
     }
-
-    get price(): number {
+    get price() {
         return this._price;
     }
-
-    get quantity(): number {
+    get quantity() {
         return this._quantity;
     }
-
-
 }
+exports.default = OrderItem;
