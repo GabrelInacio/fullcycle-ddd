@@ -17,11 +17,20 @@ class OrderItem {
     orderItemTotal() {
         return this._price * this._quantity;
     }
+    get id() {
+        return this._id;
+    }
+    get name() {
+        return this._name;
+    }
     get price() {
         return this._price;
     }
     get quantity() {
         return this._quantity;
+    }
+    get productId() {
+        return this._productId;
     }
 }
 exports.default = OrderItem;

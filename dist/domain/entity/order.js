@@ -10,6 +10,18 @@ class Order {
         this._total = this.total();
         this.validate();
     }
+    get id() {
+        return this._id;
+    }
+    get customerId() {
+        return this._customerId;
+    }
+    get items() {
+        return this._items;
+    }
+    set id(id) {
+        this._id = id;
+    }
     validate() {
         if (this._customerId.length === 0) {
             throw new Error("Customer ID is required");
@@ -23,6 +35,10 @@ class Order {
     }
     total() {
         return this._items.reduce((acc, item) => acc + item.orderItemTotal(), 0);
+    }
+    changeItems(OrderItems) {
+        this._items = OrderItems;
+        this.total();
     }
 }
 exports.default = Order;

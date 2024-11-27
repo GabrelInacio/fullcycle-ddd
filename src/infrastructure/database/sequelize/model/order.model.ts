@@ -12,10 +12,7 @@ export default class OrderModel extends Model{
     @PrimaryKey
     @Column
     declare id: string;
-
-    @Column({allowNull: false})
-    declare name: string;
-
+    
     @ForeignKey(() => CustomerModel)
     @Column({allowNull: false})
     declare customer_id: string;
